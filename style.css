@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg:#0a0a0a;
+  --card:#111111;
+  --stroke:rgba(255,255,255,0.06);
+  --text:#e5e5e5;
+  --muted:#9a9a9a;
+  --accent:#ffffff;
+  --accent2:#6b6b6b;
+}
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* 🌌 BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08), transparent 50%),
+    url("https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cWtjdXJsNzFjZjdjMGUwcmVldzFubGFyMHpmMzNqNmh6ajU3dXlnayZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/3o7aD3H1kBdc2T2n04/giphy.gif") center/cover;
+  transform:scale(1.08);
+  z-index:-2;
+}
+
+/* 💀 ENTER SCREEN */
+#enter-screen{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  cursor:pointer;
+}
+
+.enter-container{
+  text-align:center;
+  animation:fadeIn 0.8s ease;
+}
+
+.logo-glow{
+  width:110px;
+  height:110px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  padding:2px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 0 25px rgba(255,255,255,0.08);
+}
+
+.logo-glow img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.enter-container h1{
+  font-size:22px;
+  color:#d4d4d4;
+  letter-spacing:1px;
+}
+
+.enter-container p{
+  font-size:11px;
+  color:var(--muted);
+  margin-top:6px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:0.8;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:scale(0.95);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+/* 💎 HERO CARD */
+.hero-card{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  max-width:720px;
+  margin:60px auto 30px;
+  padding:14px;
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.hero-card img{
+  width:85px;
+  height:85px;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+.hero-content h1{
+  font-size:20px;
+  margin-bottom:6px;
+}
+
+.hero-content p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.4;
+  max-width:520px;
+}
+
+/* 📦 SECTIONS */
+.section{
+  padding:120px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:24px;
+}
+
+.title{
+  font-size:22px;
+  font-weight:600;
+}
+
+/* 🧱 GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+  gap:28px;
+  width:100%;
+  max-width:1100px;
+}
+
+/* 🪪 CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:14px;
+  padding:18px;
+  transition:0.25s ease;
+  backdrop-filter:blur(10px);
+
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  min-height:150px;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,0.12);
+  box-shadow:0 14px 32px rgba(0,0,0,0.7);
+}
+
+.card h3{
+  font-size:15px;
+  font-weight:600;
+  color:#ffffff;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.4;
+}
+
+/* 🚀 BOTÃO */
+.btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:10px 14px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#ffffff,#7a7a7a);
+  color:#000;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  filter:brightness(1.15);
+}
+
+/* 🏷 TAG */
+span{
+  display:inline-block;
+  margin-top:8px;
+  font-size:11px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#1a1a1a;
+  color:#cfcfcf;
+}
+
+/* 💠 LYRIS CARD */
+.lyris-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  max-width:420px;
+  margin:0 auto;
+}
+
+.lyris-img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.8);
+}
